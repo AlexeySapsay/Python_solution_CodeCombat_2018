@@ -1,17 +1,19 @@
-# https://codecombat.com/play/level/black-diamond
-# use ring of speed
+
+# Follow me on youtube  channel Phy Tu
+# Help with programming on Python, school math, physics
+#https://www.youtube.com/channel/UCP5ycahCEZ24qmRRgNnko5Q/featured
+    
 while True:
     gem = hero.findNearestItem()
     if gem:
         clear = hero.isPathClear(hero.pos, gem.pos)
-    else:
-        clear = False
-    # Метод isPathClear моказывает наличие препятствий на пути.
-    # Если все чисто, иди к камню. Используй move() и gem.pos.
+    else: 
+        clear=False
+        
     if clear:
-        lastpos = {'x': hero.pos.x, 'y': hero.pos.y}
-        hero.moveXY(gem.pos.x, gem.pos.y)
+        LastHeroPos={"x":hero.pos.x,"y":hero.pos.y}
+        hero.moveXY(gem.pos.x,gem.pos.y)
+        # Else, move back to the center point.
     else:
-        hero.moveXY(lastpos.x, lastpos.y)
-        hero.moveXY(40, 35)
-    # В противном случае возвращайся в центр.
+        hero.moveXY(LastHeroPos.x,LastHeroPos.y)
+        hero.moveXY(40,35)
